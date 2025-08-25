@@ -5,9 +5,12 @@ import com.sehoon.springbootPractice.repository.MemberRepositorty;
 import com.sehoon.springbootPractice.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 // 서비스쪽은 비즈니스 용어를 쓰는 것이 좋다.
 // repository는 개발적으로 용어를 적음.
+@Service
 public class MemberService {
 
     private final MemberRepositorty memberRepository;
@@ -15,6 +18,7 @@ public class MemberService {
     // 외부에서 넣어주도록 바꿔준다.
     // memberService입장에서는 repository를 외부에서 넣어준다.
     // 이것을 Dependency Injection (DI)라고 한다.
+    @Autowired
     public MemberService(MemberRepositorty memberRepository) {
         this.memberRepository = memberRepository;
     }

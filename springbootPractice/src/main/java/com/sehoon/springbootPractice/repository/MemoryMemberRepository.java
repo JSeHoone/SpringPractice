@@ -6,7 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class MemoryMemberRepository implements  MemberRepositorty{
 
     // 동시성 문제를 고려해야하지만,지금은 예제
