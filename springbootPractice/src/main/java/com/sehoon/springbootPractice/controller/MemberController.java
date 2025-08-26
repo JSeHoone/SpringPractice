@@ -17,6 +17,9 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        // 프록시로 적용된 memberService클래스가 출력되는지 확인
+        // MemberService$$SpringCGLIB$$0 -> CGLIB라는 기술 만든 클래스라고 함
+        System.out.println("memberService = " + memberService.getClass());
     }
 
     @GetMapping("/members/new")

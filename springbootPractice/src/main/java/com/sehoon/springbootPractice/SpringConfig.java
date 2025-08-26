@@ -1,5 +1,6 @@
 package com.sehoon.springbootPractice;
 
+import com.sehoon.springbootPractice.aop.TimeTraceAop;
 import com.sehoon.springbootPractice.repository.JdbcMemberRepository;
 import com.sehoon.springbootPractice.repository.JdbcTemplateMemberRepository;
 import com.sehoon.springbootPractice.repository.JpaMemberRepository;
@@ -43,6 +44,11 @@ public class SpringConfig {
         // Spring Data JPA를 사용하면 주입 받은 memberRepository를 사용할 수 있다.
         return new MemberService(memberRepository);
     }
+
+//    @Bean
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
+//    }
 
 //    @Bean
 //    public MemberRepository memberRepositorty() {
