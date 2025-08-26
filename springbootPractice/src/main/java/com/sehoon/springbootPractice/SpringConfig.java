@@ -1,6 +1,7 @@
 package com.sehoon.springbootPractice;
 
 import com.sehoon.springbootPractice.repository.JdbcMemberRepository;
+import com.sehoon.springbootPractice.repository.JdbcTemplateMemberRepository;
 import com.sehoon.springbootPractice.repository.MemberRepository;
 import com.sehoon.springbootPractice.repository.MemoryMemberRepository;
 import com.sehoon.springbootPractice.service.MemberService;
@@ -24,6 +25,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepositorty() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
