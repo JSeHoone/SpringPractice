@@ -4,9 +4,11 @@ import com.sehoon.springbootPractice.domain.Member;
 import com.sehoon.springbootPractice.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
 
 // 서비스쪽은 비즈니스 용어를 쓰는 것이 좋다.
 // repository는 개발적으로 용어를 적음.
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
