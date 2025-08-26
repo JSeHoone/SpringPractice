@@ -22,23 +22,33 @@ public class SpringConfig {
 //    }
 
     // 이 부분에 @PersistenceContext를 넣어줘도 된다.
-    private EntityManager em;
+//    private EntityManager em;
+//
+//    @Autowired
+//    public SpringConfig(EntityManager em) {
+//        this.em = em;
+//    }
+
+    // Spring Data JPA
+    private final MemberRepository memberRepository;
 
     @Autowired
-    public SpringConfig(EntityManager em) {
-        this.em = em;
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
     }
 
     @Bean
     public MemberService memberService() {
-        return new MemberService(memberRepositorty());
+//        return new MemberService(memberRepositorty());
+        // Spring Data JPA를 사용하면 주입 받은 memberRepository를 사용할 수 있다.
+        return new MemberService(memberRepository);
     }
 
-    @Bean
-    public MemberRepository memberRepositorty() {
+//    @Bean
+//    public MemberRepository memberRepositorty() {
 //        return new MemoryMemberRepository();
 //        return new JdbcMemberRepository(dataSource);
 //        return new JdbcTemplateMemberRepository(dataSource);
-        return new JpaMemberRepository(em);
-    }
+//        return new JpaMemberRepository(em);
+//    }
 }
