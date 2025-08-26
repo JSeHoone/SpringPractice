@@ -6,9 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import org.springframework.stereotype.Repository;
 
-public class MemoryMemberRepository implements  MemberRepositorty{
+public class MemoryMemberRepository implements MemberRepository {
 
     // 동시성 문제를 고려해야하지만,지금은 예제
     private static Map<Long,Member> store = new HashMap<>();

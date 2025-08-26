@@ -3,9 +3,7 @@ package com.sehoon.springbootPractice.service;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.sehoon.springbootPractice.domain.Member;
-import com.sehoon.springbootPractice.repository.MemberRepositorty;
 import com.sehoon.springbootPractice.repository.MemoryMemberRepository;
-import java.util.Optional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
